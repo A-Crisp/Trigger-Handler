@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>An_SObject_must_be_selected</fullName>
+    <active>true</active>
+    <description>Enforce either the Trigger Object or Trigger Object (Special) fields have been populated</description>
+    <errorConditionFormula>ISBLANK(Trigger_Object__c) &amp;&amp;  ISBLANK(TEXT(Trigger_Object_Special__c))</errorConditionFormula>
+    <errorMessage>A Trigger Object must be selected</errorMessage>
+</ValidationRule>

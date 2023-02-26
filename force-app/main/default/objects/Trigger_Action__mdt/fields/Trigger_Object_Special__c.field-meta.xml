@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trigger_Object_Special__c</fullName>
+    <description>Objects unsupported by Entity Definition lookups, but which can still have Triggers associated with them</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>If the object type isn&apos;t available via the object lookup, it can be added here</inlineHelpText>
+    <label>Trigger Object (Special)</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EmailMessage</fullName>
+                <default>false</default>
+                <label>Email Message</label>
+            </value>
+            <value>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <label>Event</label>
+            </value>
+            <value>
+                <fullName>Task</fullName>
+                <default>false</default>
+                <label>Task</label>
+            </value>
+            <value>
+                <fullName>User</fullName>
+                <default>false</default>
+                <label>User</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
