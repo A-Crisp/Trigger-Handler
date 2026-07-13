@@ -54,10 +54,10 @@ public with sharing class TriggerHandlerTest {
 
     @IsTest
     static void invokeTriggerActionsTest() {
-        TriggerInvokableAction testAction = new TriggerInvokableAction('', 'TestTriggerAction');
+        TriggerInvocableAction testAction = new TriggerInvocableAction('', 'TestTriggerAction');
 
         TriggerHandler.invokeTriggerActions(
-            new List<TriggerInvokableAction>{ testAction },
+            new List<TriggerInvocableAction>{ testAction },
             null,
             null,
             null,

@@ -1,9 +1,9 @@
-public inherited sharing class TriggerInvokableAction {
+public inherited sharing class TriggerInvocableAction {
     private final String namespace;
     private final String className;
     private final System.Type apexActionType;
 
-    public TriggerInvokableAction(String namespace, String className) {
+    public TriggerInvocableAction(String namespace, String className) {
         this.namespace = namespace;
         this.className = className;
 

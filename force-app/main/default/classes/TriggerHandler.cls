@@ -24,7 +24,7 @@ public without sharing class TriggerHandler {
         }
 
         Schema.SObjectType triggerSObjectType = getTriggerSObjectType(oldList, newList);
-        List<TriggerInvokableAction> triggerActions = getTriggerActions(
+        List<TriggerInvocableAction> triggerActions = getTriggerActions(
             triggerSObjectType,
             operationType
         );
@@ -35,20 +35,20 @@ public without sharing class TriggerHandler {
     @SuppressWarnings('PMD.ExcessiveParameterList')
     @TestVisible
     private static void invokeTriggerActions(
-        List<TriggerInvokableAction> invokableActions,
+        List<TriggerInvocableAction> invocableActions,
         List<SObject> oldList,
         List<SObject> newList,
         Map<Id, SObject> oldMap,
         Map<Id, SObject> newMap,
         System.TriggerOperation operationType
     ) {
-        for (TriggerInvokableAction action : invokableActions) {
+        for (TriggerInvocableAction action : invocableActions) {
             action.run(oldList, newList, oldMap, newMap, operationType);
         }
     }
 
     @TestVisible
-    private static List<TriggerInvokableAction> getTriggerActions(
+    private static List<TriggerInvocableAction> getTriggerActions(
         Schema.SObjectType objectType,
         System.TriggerOperation operationType
     ) {
@@ -57,12 +57,12 @@ public without sharing class TriggerHandler {
             operationType
         );
 
-        List<TriggerInvokableAction> invokableActions = new List<TriggerInvokableAction>();
+        List<TriggerInvocableAction> invocableActions = new List<TriggerInvocableAction>();
 
         for (Trigger_Action__mdt metadataRecord : actionMetadata) {
             if (!disabledActions.contains(metadataRecord.Id)) {
-                invokableActions.add(
-                    new TriggerInvokableAction(
+                invocableActions.add(
+                    new TriggerInvocableAction(
                         metadataRecord.Namespace__c,
                         metadataRecord.Apex_Class_Name__c
                     )
@@ -70,7 +70,7 @@ public without sharing class TriggerHandler {
             }
         }
 
-        return invokableActions;
+        return invocableActions;
     }
 
     @TestVisible
